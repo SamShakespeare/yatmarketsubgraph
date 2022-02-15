@@ -1,0 +1,68 @@
+type BidAccepted @entity {
+  id: ID!
+  bidId: BigInt! # uint256
+}
+
+type BidCreated @entity {
+  id: ID!
+  bidId: BigInt! # uint256
+  tokenId: BigInt! # uint256
+  bid: BigInt! # uint256
+  bidder: Bytes! # address
+  owner: Bytes! # address
+  status: Int! # uint8
+}
+
+type BidStatusUpdated @entity {
+  id: ID!
+  bidId: BigInt! # uint256
+  status: Int! # uint8
+}
+
+type FilledListing @entity {
+  id: ID!
+  listing_listing_active: Boolean! # bool
+  listing_listing_listingId: BigInt! # uint256
+  listing_listing_tokenId: BigInt! # uint256
+  listing_listing_price: BigInt! # uint256
+  listing_listing_activeIndex: BigInt! # uint256
+  listing_listing_userActiveIndex: BigInt! # uint256
+  listing_listing_owner: Bytes! # address
+  listing_listing_tokenURI: String! # string
+  listing_buyer: Bytes! # address
+}
+
+type ListingCancelled @entity {
+  id: ID!
+  id: BigInt! # uint256
+  active: Boolean! # bool
+}
+
+type ListingCreated @entity {
+  id: ID!
+  active: Boolean! # bool
+  listingId: BigInt! # uint256
+  tokenId: BigInt! # uint256
+  price: BigInt! # uint256
+  owner: Bytes! # address
+  tokenURI: String! # string
+}
+
+type ListingFilled @entity {
+  id: ID!
+  id: BigInt! # uint256
+  active: Boolean! # bool
+  buyer: Bytes! # address
+}
+
+type ListingUpdated @entity {
+  id: ID!
+  listingId: BigInt! # uint256
+  price: BigInt! # uint256
+}
+
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}

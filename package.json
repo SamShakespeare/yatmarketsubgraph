@@ -1,0 +1,16 @@
+{
+  "name": "yatmarket",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ sammyshakes/yatmarket",
+    "create-local": "graph create --node http://localhost:8020/ sammyshakes/yatmarket",
+    "remove-local": "graph remove --node http://localhost:8020/ sammyshakes/yatmarket",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 sammyshakes/yatmarket"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.25.3",
+    "@graphprotocol/graph-ts": "0.24.1"
+  }
+}
