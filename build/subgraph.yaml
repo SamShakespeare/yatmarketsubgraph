@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: yatmarket
@@ -19,7 +19,7 @@ dataSources:
         - Purchase
       abis:
         - name: yatmarket
-          file: ./abis/yatmarket.json
+          file: yatmarket\abis\yatmarket.json
       eventHandlers:
         - event: BidAccepted(indexed uint256)
           handler: handleBidAccepted
@@ -35,4 +35,4 @@ dataSources:
           handler: handleListingFilled
         - event: ListingUpdated(uint256,uint256)
           handler: handleListingUpdated
-      file: ./src/mapping.ts
+      file: yatmarket\yatmarket.wasm
